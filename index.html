@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/exif.js"></script>
+		<script type="text/javascript" src="js/imageOrientationSimp.js"></script>
+		<title>exif图片旋转简化版</title>
+	</head>
+
+	<body>
+		<div class="view">
+			<div class="content">
+				<div class="block">
+					<input id="pic_input" type="file" accept="image/*" name="" id="" value="" />
+					<img id="show" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		document.getElementById("pic_input").onchange = function(e) {
+			var files = e.target.files;
+			if(files.length <= 0) {
+				return false;
+			} else {
+				imageOrientationSimp({
+					file: files[0],
+					compress: true,
+					maxwidth: 2000,
+					callback: function(base64str, canvas) {
+						document.getElementById("show").src = base64str;
+					}
+				});
+			}
+		}
+	</script>
+
+</html>
