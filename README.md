@@ -1,7 +1,7 @@
 # imageOrientationSimplified
 根据exif信息旋转图片到正常方向，简化之后同样能处理大多数情况，处理速度相比之前更快  
 ## 使用
-引入imageOrientationSimp.js  
+引入exif.js，imageOrientationSimp.js  
 ### html代码
 ```
 <input id="pic_input" type="file" accept="image/*" name="" id="" value="" />
