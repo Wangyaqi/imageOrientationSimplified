@@ -15,9 +15,9 @@ document.getElementById("pic_input").onchange = function(e) {
     return false;
   } else {
     imageOrientationSimp({
-      file: files[0],
-      compress: true,
-      maxwidth: 2000,
+      file: files[0],//要处理的图片
+      compress: true,//是否压缩
+      maxwidth: 2000,//压缩之后最大宽度
       callback: function(base64str, canvas) {
         document.getElementById("show").src = base64str;
       }
